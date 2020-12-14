@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+# XMkongyunxiabeauty
+
+=======
 # XM
 ÎÒÀ´ÁË
 
@@ -9,3 +13,4 @@ sssecond commit
 >>>>>>> 
 
 xpj
+>>>>>>> 00509fa51e1214006f77c2d1a27d931a45754fa7
