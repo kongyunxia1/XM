@@ -9,7 +9,7 @@ module.exports = {
     productionSourceMap: false, // 不需要生产环境的 source map（减小dist文件大小，加速构建）
     devServer: {
         open: true, // npm run serve后自动打开页面
-        host: '192.168.18.218', // 匹配本机IP地址(默认是0.0.0.0)
+        host: '192.168.18.39', // 匹配本机IP地址(默认是0.0.0.0)
         port: 8989, // 开发服务器运行端口号
         proxy: {
             '/api': {
@@ -26,9 +26,9 @@ module.exports = {
     chainWebpack: (config) => {
         // 移除 prefetch 插件(针对生产环境首屏请求数进行优化)
         config.plugins.delete('prefetch')
-            // 移除 preload 插件(针对生产环境首屏请求数进行优化)   preload 插件的用途：https://cli.vuejs.org/zh/guide/html-and-static-assets.html#preload
+        // 移除 preload 插件(针对生产环境首屏请求数进行优化)   preload 插件的用途：https://cli.vuejs.org/zh/guide/html-and-static-assets.html#preload
         config.plugins.delete('preload')
-            // 第1个参数：别名，第2个参数：路径  （设置路径别名）
+        // 第1个参数：别名，第2个参数：路径  （设置路径别名）
         config.resolve.alias
             .set('@pages', resolve('./src/page'))
             .set('@router', resolve('./src/router'))
@@ -50,10 +50,10 @@ module.exports = {
                     maxEntrypointSize: 5000000,
                     // 生成文件的最大体积 整数类型（以字节为单位,默认值是：250000 (bytes)）
                     maxAssetSize: 3000000
-                        // // 只给出 js 文件的性能提示
-                        // assetFilter: function (assetFilename) {
-                        //   return assetFilename.endsWith('.js')
-                        // }
+                    // // 只给出 js 文件的性能提示
+                    // assetFilter: function (assetFilename) {
+                    //   return assetFilename.endsWith('.js')
+                    // }
                 }
             }
         }
