@@ -1,20 +1,27 @@
 <template>
-  <div class="">
-    <Header>FGD</Header>
+  <div class=''>
+     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Header from "../../components/header/index";
 export default {
   data() {
-    return {};
+    return {
+
+    };
   },
   computed: {},
   watch: {},
-  methods: {},
-  created() {},
-  mounted() {},
+  methods: {
+
+  },
+  created() {
+
+  },
+  mounted() {
+
+  },
   beforeCreate() {},
   beforeMount() {},
   beforeUpdate() {},
@@ -22,10 +29,10 @@ export default {
   beforeDestroy() {},
   destroyed() {},
   activated() {},
-  components: {
-    Header,
-  },
-};
+  components: {},
+}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang='scss' scoped>
+
+</style>
