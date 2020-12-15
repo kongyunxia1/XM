@@ -7,19 +7,11 @@
         placeholder="搜索商品，共9747款好物"
       />
     </van-cell-group>
-<<<<<<< HEAD
 
     <van-tabs v-model="active">
       <van-tab title="推荐">推荐</van-tab>
       <van-tab title="居家">配件</van-tab>
       <van-tab title="服饰">服饰</van-tab>
-=======
-    <van-tabs v-model="active">
-      <van-tab title="推荐"></van-tab>
-      <van-tab title="居家">居家</van-tab>
-      <van-tab title="配件">配件</van-tab>
-      <van-tab title="服装">服装</van-tab>
->>>>>>> wang
       <van-tab title="电器">电器</van-tab>
       <van-tab title="洗护">洗护</van-tab>
       <van-tab title="饮食">饮食</van-tab>
@@ -32,19 +24,7 @@ export default {
   data() {
     return {
       value: "",
-<<<<<<< HEAD
       active: 1,
-=======
-      active: 0,
-      tabs: {
-        live: "居家",
-        part: "配件",
-        clothing: "服装",
-        appliance: "电器",
-        wash: "洗护",
-        diet: "饮食",
-      },
->>>>>>> wang
     };
   },
   computed: {},
