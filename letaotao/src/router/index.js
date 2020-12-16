@@ -11,47 +11,26 @@ const router = new VueRouter({
             path: '/shouye',
             redirect: '/shouye/jujia',
             component: () =>
-                import ('../views/shouye/index'),
+                import('../views/shouye/index'),
             children: [{
                 path: 'jujia',
-                component: () =>
-                    import ('../views/shouye/jujia/index.vue')
+                component: () => import('../views/shouye/jujia/index.vue')
             }, ]
         },
         {
             path: '/fenlei',
             component: () =>
-                import ('../views/fenlei/index')
+                import('../views/fenlei/index')
         },
         {
             path: '/cart',
             component: () =>
-                import ('../views/cart/index')
+                import('../views/cart/index')
         },
         {
             path: '/mine',
             component: () =>
-                import ('../views/mine/index')
-        },
-        {
-            path: '/login',
-            component: () =>
-                import ('../views/login/index'),
-            /* children: [{
-                path: 'login',
-                component: () =>
-                    import ('../views/login/loging/index')
-            }] */
-        },
-        {
-            path: '/resgiest',
-            component: () =>
-                import ('../views/resgiest/index')
-        },
-        {
-            path: '/loging',
-            component: () =>
-                import ('../views/loging/index')
+                import('../views/mine/index')
         }
     ],
     linkActiveClass: "active"
