@@ -1,196 +1,62 @@
 <template>
-<<<<<<< HEAD
-  <div class="shoyye">shouye</div>
+  <div class="">
+    <Header></Header>
+    <!--  <van-tabs v-model="active">
+      <van-tab title="推荐" to="/shouye/tuijian">
+        <router-view></router-view>
+      </van-tab>
+
+      <van-tab title="居家" to="/shouye/jujia">
+        <router-view></router-view>
+      </van-tab>
+      <van-tab title="配件" to="/shouye/jujia">
+        <router-view></router-view>
+      </van-tab>
+
+      <van-tab title="服装" to="/shouye/jujia">
+        <router-view></router-view
+      ></van-tab>
+      <van-tab title="电器" to="/shouye/jujia">
+        <router-view></router-view
+      ></van-tab>
+      <van-tab title="洗护" to="/shouye/jujia">
+        <router-view></router-view
+      ></van-tab>
+      <van-tab title="饮食" to="/shouye/jujia">
+        <router-view></router-view
+      ></van-tab>
+    </van-tabs> -->
+
+    <van-tabs v-model="active">
+      <van-tab title="推荐" to="/shouye/tuijian"> </van-tab>
+      <van-tab title="居家" to="/shouye/jujia"> </van-tab>
+      <van-tab title="配件" to="/shouye/jujia"> </van-tab>
+      <van-tab title="服装" to="/shouye/jujia"> </van-tab>
+      <van-tab title="电器" to="/shouye/jujia"> </van-tab>
+      <van-tab title="洗护" to="/shouye/jujia"> </van-tab>
+      <van-tab title="饮食" to="/shouye/jujia"> </van-tab>
+      <router-view></router-view>
+    </van-tabs>
+
+    <Footer></Footer>
+  </div>
 </template>
 
 <script>
+import Header from "@/components/header/index.vue";
+import Footer from "../../components/footer/index";
 export default {
   data() {
-    return {};
+    return {
+      value: "",
+      active: 0,
+    };
   },
   computed: {},
   watch: {},
   methods: {},
   created() {},
   mounted() {},
-=======
-<<<<<<< HEAD
-  <div class=''>
-     <router-view></router-view>
-=======
-  <div class="">
-    <Header></Header>
-    <van-swipe :autoplay="3000">
-      <van-swipe-item v-for="(image, index) in images" :key="index">
-        <img
-          v-lazy="image"
-          :style="{ width: 420 + 'px', height: 150 + 'px' }"
-        />
-      </van-swipe-item>
-    </van-swipe>
-
-    <van-row
-      type="flex"
-      justify="space-around"
-      :style="{
-        fontSize: 3 + 'px',
-        marginBottom: 12 + 'px',
-      }"
-    >
-      <van-col span="6"><van-icon name="passed" />网易自营品牌</van-col>
-      <van-col span="6"><van-icon name="passed" />30天无忧退货</van-col>
-      <van-col span="6"><van-icon name="passed" />48小时快速退款</van-col>
-    </van-row>
-
-    <!--   <van-row>
-      <van-col span="12" offset="8" :style="{ marginTop: 3 + 'px' }"
-        >品牌制造商直供</van-col
-      >
-    </van-row> -->
-    <p :style="{ textAlign: 'center', verticalAlign: 'middle' }">
-      品牌制造商直供
-    </p>
-
-    <van-row type="flex" justify="space-around">
-      <van-col span="12"
-        ><van-card
-          v-for="item in list"
-          :key="item._id"
-          :title="item.name"
-          :price="item.price"
-          :thumb="item.coverImg"
-          @click="detail(item._id)"
-      /></van-col>
-      <van-col span="12"
-        ><van-card
-          v-for="item in list"
-          :key="item._id"
-          :title="item.name"
-          :price="item.price"
-          :thumb="item.coverImg"
-          @click="detail(item._id)"
-      /></van-col>
-    </van-row>
-    <div
-      class="tea"
-      :style="{
-        width: 413 + 'px',
-        height: 120 + 'px',
-        background: ' #ebe6e6',
-      }"
-    >
-      <p
-        :style="{
-          textAlign: 'center',
-          verticalAlign: 'middle',
-          lineHeight: 120 + 'px',
-        }"
-      >
-        新品首发>
-        <router-link to="/shouye" tag="a"> </router-link>
-      </p>
-
-      <van-row type="flex" justify="space-around">
-        <van-col span="12"
-          ><van-card
-            v-for="item in list1"
-            :key="item._id"
-            :title="item.name"
-            :price="item.price"
-            :thumb="item.coverImg"
-            @click="detail(item._id)"
-        /></van-col>
-        <van-col span="12"
-          ><van-card
-            v-for="item in list1"
-            :key="item._id"
-            :title="item.name"
-            :price="item.price"
-            :thumb="item.coverImg"
-            @click="detail(item._id)"
-        /></van-col>
-      </van-row>
-    </div>
-    <Footer></Footer>
->>>>>>> xu7
-  </div>
-</template>
-
-<script>
-<<<<<<< HEAD
-export default {
-  data() {
-    return {
-
-=======
-import axios from "axios";
-import Vue from "vue";
-import { Lazyload } from "vant";
-
-Vue.use(Lazyload);
-
-import { Col, Row } from "vant";
-
-Vue.use(Col);
-Vue.use(Row);
-
-import { Checkbox, CheckboxGroup } from "vant";
-
-Vue.use(Checkbox);
-Vue.use(CheckboxGroup);
-
-import { Card } from "vant";
-
-Vue.use(Card);
-
-import Header from "@/components/header/index.vue";
-import Footer from "../../components/footer/index";
-export default {
-  data() {
-    return {
-      images: [
-        "http://yanxuan.nosdn.127.net/aef1dfa6e25c61c96a8fcaa24e756b83.jpg?imageView&thumbnail=750x0&quality=75",
-        "http://yanxuan.nosdn.127.net/0260e7764f00606950ee0933ceadc84e.jpg?imageView&thumbnail=750x0&quality=75",
-        "http://yanxuan.nosdn.127.net/e6d195c3ed656777e0e34c142a496c88.jpg?imageView&thumbnail=750x0&quality=75",
-        "http://yanxuan.nosdn.127.net/41bf0751457a405e1137f01d66d7f843.jpg?imageView&thumbnail=750x0&quality=75",
-        "http://yanxuan.nosdn.127.net/574dafc21b52e225d80bd660dc4f8b99.jpg?imageView&thumbnail=750x0&quality=75",
-      ],
-      list: [],
-      list1: [],
->>>>>>> xu7
-    };
-  },
-  computed: {},
-  watch: {},
-  methods: {
-<<<<<<< HEAD
-
-  },
-  created() {
-
-  },
-  mounted() {
-
-  },
-=======
-    detail(id) {
-      console.log(id);
-    },
-  },
-  async created() {
-    const res = await axios.get("http://localhost:3009/api/v1/products", {
-      params: {
-        per: 5,
-        page: parseInt(Math.random() * 10),
-      },
-    });
-    console.log(res);
-    this.list = res.data.products.splice(0, 2);
-    this.list1 = res.data.products.splice(0, 2);
-  },
-  mounted() {},
->>>>>>> xu7
->>>>>>> 3b08be5bad9ad18560a141c1575ac3ff48ea7b2b
   beforeCreate() {},
   beforeMount() {},
   beforeUpdate() {},
@@ -198,21 +64,6 @@ export default {
   beforeDestroy() {},
   destroyed() {},
   activated() {},
-<<<<<<< HEAD
-  components: {},
-};
-</script>
-
-<style lang="scss" scoped></style>
-=======
-<<<<<<< HEAD
-  components: {},
-}
-</script>
-
-<style lang='scss' scoped>
-
-=======
   components: {
     Header,
     Footer,
@@ -220,19 +71,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.block {
-  width: 120px;
-  height: 120px;
-  background-color: #fff;
-}
->>>>>>> xu7
-</style>
->>>>>>> 3b08be5bad9ad18560a141c1575ac3ff48ea7b2b
+<style lang="scss" scoped></style>

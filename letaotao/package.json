@@ -13,14 +13,9 @@
     "core-js": "^3.6.5",
     "vant": "^2.11.2",
     "vue": "^2.6.11",
-<<<<<<< HEAD
     "vue-router": "^3.4.9",
     "vuex": "^3.6.0",
-    "webpack": "^5.10.1"
-=======
-    "vuex": "^3.6.0",
-    "vue-router": "^3.4.9"
->>>>>>> 3b08be5bad9ad18560a141c1575ac3ff48ea7b2b
+    "webpack-dev-server": "^3.11.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

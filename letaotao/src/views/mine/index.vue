@@ -1,61 +1,51 @@
 <template>
-  <div class='mine'>
+  <div class="mine">
     <div class="top">
       <van-skeleton class="touxiang" title avatar :row="1" />
     </div>
     <div class="zichan">
       <p>我的资产</p>
     </div>
-    <div class='gongge'>
-    <van-grid>
+    <div class="gongge">
+      <van-grid>
         <van-grid-item icon="photo-o" text="红包" />
         <van-grid-item icon="photo-o" text="优惠券" />
         <van-grid-item icon="photo-o" text="津贴" />
         <van-grid-item icon="photo-o" text="礼品卡" />
-    </van-grid>
-  </div>
-  <div class='duoge'>
-    <van-grid class="gesize">
+      </van-grid>
+    </div>
+    <div class="duoge">
+      <van-grid class="gesize">
         <van-grid-item icon="orders-o" text="我的订单" />
         <van-grid-item icon="user-circle-o" text="账号管理" />
         <van-grid-item icon="phone-o" text="我的手机号" />
-    </van-grid>
-    <van-grid class="gesize">
+      </van-grid>
+      <van-grid class="gesize">
         <van-grid-item icon="location-o" text="地址管理" />
         <van-grid-item icon="certificate" text="支付安全" />
         <van-grid-item icon="records" text="意见反馈" />
-    </van-grid>
-    
-  </div>
-  <div class="logout">
-    <van-button type="default" size="large">退出登录</van-button>
-  </div>
-
+      </van-grid>
+    </div>
+    <div class="logout">
+      <van-button type="default" size="large">退出登录</van-button>
+    </div>
 
     <Footer></Footer>
   </div>
 </template>
 
 <script>
-import Footer from "../../components/footer/index"
+import Footer from "../../components/footer/index";
 
 export default {
   data() {
-    return {
-
-    };
+    return {};
   },
   computed: {},
   watch: {},
-  methods: {
-
-  },
-  created() {
-
-  },
-  mounted() {
-
-  },
+  methods: {},
+  created() {},
+  mounted() {},
   beforeCreate() {},
   beforeMount() {},
   beforeUpdate() {},
@@ -66,35 +56,35 @@ export default {
   components: {
     Footer,
   },
-}
+};
 </script>
 
 <style scoped>
-.top{
+.top {
   width: 100%;
   height: 160px;
-  background: url('../../../public/img/center-bg.d069279.png') no-repeat center/cover;
+  /*  background: url('../../../public/img/center-bg.d069279.png') no-repeat center/cover; */
   overflow: hidden;
 }
-.zichan{
+.zichan {
   width: 100%;
   height: 35px;
-  border-bottom:1px solid #cecece;
+  border-bottom: 1px solid #cecece;
 }
-.zichan p{
-  margin-left:20px;
+.zichan p {
+  margin-left: 20px;
 }
-.duoge{
+.duoge {
   margin-top: 15px;
 }
-.logout{
+.logout {
   margin-top: 15px;
 }
-.gesize{
+.gesize {
   display: flex;
   justify-content: space-between;
 }
-.touxiang{
+.touxiang {
   margin-top: 35px;
 }
 </style>

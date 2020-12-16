@@ -7,15 +7,6 @@
         placeholder="搜索商品，共9747款好物"
       />
     </van-cell-group>
-    <van-tabs v-model="active">
-      <van-tab title="推荐"></van-tab>
-      <van-tab title="居家">居家</van-tab>
-      <van-tab title="配件">配件</van-tab>
-      <van-tab title="服装">服装</van-tab>
-      <van-tab title="电器">电器</van-tab>
-      <van-tab title="洗护">洗护</van-tab>
-      <van-tab title="饮食">饮食</van-tab>
-    </van-tabs>
   </div>
 </template>
 

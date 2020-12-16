@@ -9,11 +9,7 @@ module.exports = {
   productionSourceMap: false, // 不需要生产环境的 source map（减小dist文件大小，加速构建）
   devServer: {
     open: true, // npm run serve后自动打开页面
-<<<<<<< HEAD
-    host: "192.168.18.49", // 匹配本机IP地址(默认是0.0.0.0)
-=======
     host: "0.0.0.0", // 匹配本机IP地址(默认是0.0.0.0)
->>>>>>> 3b08be5bad9ad18560a141c1575ac3ff48ea7b2b
     port: 8989, // 开发服务器运行端口号
     proxy: {
       "/api": {
