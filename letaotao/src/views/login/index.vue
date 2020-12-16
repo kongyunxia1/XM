@@ -8,9 +8,9 @@
         <van-icon name="orders-o"/>
         手机号快捷登录
         </van-button>
-      <van-button class="btn2" size="large"  plain hairline type="danger">
-        <van-icon name="envelop-o" />
-        邮箱账号登录
+      <van-button class="btn2" size="large"  plain hairline type="danger" @click="gores">
+        
+        没有账号，去注册
         </van-button>
     </div>
     <div class="bot">
@@ -52,6 +52,9 @@ export default {
     gologin(){
       this.$router.push('/loging')
     },
+    gores(){
+      this.$router.push('/resgiest')
+    }
   },
   created() {
 

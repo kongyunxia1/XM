@@ -7,18 +7,6 @@
       <van-form>
         <div class="tu">
           上传头像
-          <!-- <el-upload
-            class="avatar-uploader"
-            action="uploadData"
-            :http-request="UploadImage"
-            :show-file-list="false"
-            :on-success="handleAvatarSuccess"
-            :before-upload="beforeAvatarUpload"
-          >
-            <img v-if="imageUrl" :src="imageUrl" style="width: 100px;height: 100px;" />
-            <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-          </el-upload> -->
-
           <img src="../../../public/img/timg.jpg" alt="">
           <!-- <van-uploader :after-read="afterRead" v-model="file"/> -->
         </div>
@@ -60,37 +48,26 @@ export default {
     return {
       username: '',
       password: '',
-      // imageUrl:'',
     };
   },
   computed: {},
   watch: {},
   methods: {
-    /* upload() {
-      alert(this.file)
-      axios.post("/api/upload").then(res=>{
-            console.log(res)  
-            alert(res.data.msg)         
-          })
-      // 此时可以自行将文件上传至服务器
-      // console.log(file);
-    }, */
     onSubmit() {
-      
-      axios.post("/api/user/resgiest", {
+      axios.post("http://localhost:3009/api/v1/auth/reg", {
           userName: this.username,
           password: this.password,
         })
         .then((res) => {
-          console.log(res.data.msg)
-           if (res.data.code == 20000) {
-             alert(res.data.msg)
+          console.log(res.data)
+           if (res.data.code == 'success') {
+             alert('注册成功')
               this.$router.push({
                 path: "/loging", 
               });
-            }
-          
-          
+            }else{
+              alert(res.data.message)
+            } 
         });
     },
     // 图片上传之前处理

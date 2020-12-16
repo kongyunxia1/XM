@@ -1,8 +1,6 @@
 <template>
-<<<<<<< HEAD
   <div class=''>
      <router-view></router-view>
-=======
   <div class="">
     <Header></Header>
     <van-swipe :autoplay="3000">
@@ -97,17 +95,10 @@
       </van-row>
     </div>
     <Footer></Footer>
->>>>>>> xu7
   </div>
 </template>
 
 <script>
-<<<<<<< HEAD
-export default {
-  data() {
-    return {
-
-=======
 import axios from "axios";
 import Vue from "vue";
 import { Lazyload } from "vant";
@@ -142,13 +133,11 @@ export default {
       ],
       list: [],
       list1: [],
->>>>>>> xu7
     };
   },
   computed: {},
   watch: {},
   methods: {
-<<<<<<< HEAD
 
   },
   created() {
@@ -157,11 +146,10 @@ export default {
   mounted() {
 
   },
-=======
     detail(id) {
       console.log(id);
     },
-  },
+  
   async created() {
     const res = await axios.get("http://localhost:3009/api/v1/products", {
       params: {
@@ -174,7 +162,6 @@ export default {
     this.list1 = res.data.products.splice(0, 2);
   },
   mounted() {},
->>>>>>> xu7
   beforeCreate() {},
   beforeMount() {},
   beforeUpdate() {},
@@ -182,19 +169,12 @@ export default {
   beforeDestroy() {},
   destroyed() {},
   activated() {},
-<<<<<<< HEAD
-  components: {},
-}
-</script>
-
-<style lang='scss' scoped>
-
-=======
   components: {
     Header,
     Footer,
   },
-};
+  }
+
 </script>
 
 <style scoped>
@@ -210,5 +190,4 @@ export default {
   height: 120px;
   background-color: #fff;
 }
->>>>>>> xu7
 </style>

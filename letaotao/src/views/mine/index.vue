@@ -28,17 +28,15 @@
     
   </div>
   <div class="logout">
-    <van-button type="default" size="large">退出登录</van-button>
+    <van-button type="default" size="large" @click="logout">退出登录</van-button>
   </div>
-
-
     <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Footer from "../../components/footer/index"
-
+import { Toast } from 'vant';
 export default {
   data() {
     return {
@@ -48,7 +46,14 @@ export default {
   computed: {},
   watch: {},
   methods: {
-
+    logout(){
+      Toast({
+        message: '退出登录成功',
+        position: 'bottom',
+        duration:700,
+      });
+      this.$router.push('/login')
+    }
   },
   created() {
 

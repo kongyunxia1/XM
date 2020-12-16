@@ -33,7 +33,7 @@
       </div>
       <div class="gores">
         <span>还没有账号，</span>
-        <router-link to="/resgiest" href="#">去注册 ></router-link>
+        <router-link to="/resgiest">去注册 ></router-link>
       </div>
     </div>
   </div>
@@ -54,19 +54,18 @@ export default {
   watch: {},
   methods: {
     gomine(){
-      axios.post("/api/login", {
-          userName: this.username,
+      axios.post("http://localhost:3009/api/v1/auth/login", {
+          username: this.username,
           password: this.password,
         })
         .then((res) => {
-          console.log(res)
-           if (res.data.code == 20000) {
-             alert(res.data.msg)
+          console.log(res.data)
+           if (res.data.code == 'error') {
               this.$router.push({
                 path: "/mine", 
               });
             }else{
-              alert(res.data.msg)
+              // alert(res.data.msg)
             }
           
           
