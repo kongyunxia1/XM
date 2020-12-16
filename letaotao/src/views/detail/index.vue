@@ -31,7 +31,7 @@
       <ul>
         <li @click="getshoplist()">
           <h3>商品标题</h3>
-          <p>描述信息</p>
+          <p>描述信息123</p>
           <p class="pr">price="2.00"</p>
         </li>
       </ul>
@@ -70,7 +70,9 @@ Vue.use(SwipeItem);
 Vue.use(NavBar);
 export default {
   data() {
-    return {};
+    return {
+    /*   list:[], */
+    };
   },
   computed: {},
   watch: {},
@@ -79,7 +81,9 @@ export default {
       Toast("加入成功");
     },
     getshoplist() {
-      axios.get("http://localhost:3009/api/v1/products/:id").then((res) => {
+      axios.get("http://localhost:3009/api/v1/products/+").then((res) => {
+        console.log(res)
+       /*  this.list=this.res.data */
         return res.data[id];
       });
     },

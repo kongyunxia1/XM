@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router/index";
@@ -8,6 +9,21 @@ import "vant/lib/index.css";
 
 Vue.use(Vant);
 
+=======
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router/index'
+import store from './store/index'
+import axios from "axios"
+import Vant from 'vant';
+import 'vant/lib/index.css';
+
+Vue.use(Vant);
+Vue.prototype.$http = axios
+
+Vue.use(Vant);
+
+>>>>>>> 3b08be5bad9ad18560a141c1575ac3ff48ea7b2b
 Vue.prototype.$http = axios;
 
 Vue.config.productionTip = false;
