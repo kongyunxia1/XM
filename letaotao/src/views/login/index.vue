@@ -9,7 +9,6 @@
         手机号快捷登录
         </van-button>
       <van-button class="btn2" size="large"  plain hairline type="danger" @click="gores">
-        
         没有账号，去注册
         </van-button>
     </div>
@@ -30,10 +29,7 @@
           微博
         </a>
       </ul>
-    </div>
-    
-    
-    
+    </div>  
   </div>
 </template>
 

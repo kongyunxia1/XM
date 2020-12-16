@@ -78,7 +78,7 @@ export default {
 .top{
   width: 100%;
   height: 160px;
-  background: url('../../../public/img/center-bg.d069279.png') no-repeat center/cover;
+  background: url('https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3942751454,1089199356&fm=26&gp=0.jpg') no-repeat center/cover;
   overflow: hidden;
 }
 .zichan{
