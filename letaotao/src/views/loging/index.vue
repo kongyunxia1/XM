@@ -1,10 +1,9 @@
 <template>
-  <div class='resgiest'>
+  <div class="resgiest">
     <Header></Header>
     <router-view></router-view>
-    <span class="wz" >网易严选</span><br>
+    <span class="wz">网易严选</span><br />
     <div class="form">
-      
       <van-form>
         <van-field
           v-model="username"
@@ -22,14 +21,24 @@
           :rules="[{ required: true, message: '请填写密码' }]"
         />
         <div style="margin: 16px;">
-          <van-button square block type="danger" native-type="submit" @click="gomine">
+          <van-button
+            square
+            block
+            type="danger"
+            native-type="submit"
+            @click="gomine"
+          >
             登录
           </van-button>
         </div>
       </van-form>
       <div class="res">
-        <input type="checkbox" v-model="checked">
-        <span>我同意<a href="#">《服务条款》</a>和<a href="">《网易隐私政策》</a></span>
+        <input type="checkbox" v-model="checked" />
+        <span
+          >我同意<a href="#">《服务条款》</a>和<a href=""
+            >《网易隐私政策》</a
+          ></span
+        >
       </div>
       <div class="gores">
         <span>还没有账号，</span>
@@ -40,44 +49,42 @@
 </template>
 
 <script>
-import axios from "axios"
-import Header from "../login/components/header/index"
+import axios from "axios";
+import Header from "../login/components/header/index";
 export default {
   data() {
     return {
       checked: true,
-      username: '',
-      password: '',
+      username: "",
+      password: "",
     };
   },
   computed: {},
   watch: {},
   methods: {
-    gomine(){
-      axios.post("http://localhost:3009/api/v1/auth/login", {
-          username: this.username,
+    gomine() {
+      axios
+        .post("http://localhost:3009/api/v1/auth/login", {
+          userName: this.username,
           password: this.password,
         })
         .then((res) => {
-          console.log(res.data)
-           if (res.data.code == 'error') {
-              this.$router.push({
-                path: "/mine", 
-              });
-            }else{
-              // alert(res.data.msg)
+          if (res.data.code == "success") {
+            if (localStorage.getItem("token")) {
+              localStorage.removeItem("token");
             }
-          
-          
+            localStorage.setItem("token", JSON.stringify(res.data.token));
+            this.$router.push({
+              path: "/",
+            });
+          } else {
+            // alert(res.data.message);
+          }
         });
-    }
+    },
   },
-  created() {
-
-  },
-  mounted() {
-
-  },
+  created() {},
+  mounted() {},
   beforeCreate() {},
   beforeMount() {},
   beforeUpdate() {},
@@ -88,23 +95,22 @@ export default {
   components: {
     Header,
   },
-}
+};
 </script>
 
 <style scoped>
-.wz{
-  font-size:30px;
-  margin-left:120px;
+.wz {
+  font-size: 30px;
+  margin-left: 120px;
 }
-.form{
-  margin-top:80px;
+.form {
+  margin-top: 80px;
 }
-.res{
+.res {
   margin-left: 10px;
-
 }
-.gores{
-  margin-top:40px;
+.gores {
+  margin-top: 40px;
   margin-left: 100px;
 }
 </style>

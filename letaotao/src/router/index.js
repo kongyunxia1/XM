@@ -32,8 +32,20 @@ const router = new VueRouter({
       component: () => import("../views/cart/index"),
     },
     {
+      path: "/resgiest",
+      component: () => import("../views/resgiest/index"),
+    },
+    {
+      path: "/loging",
+      component: () => import("../views/loging/index"),
+    },
+    {
       path: "/mine",
       component: () => import("../views/mine/index"),
+    },
+    {
+      path: "/detail",
+      component: () => import("../views/detail/index"),
     },
   ],
   linkActiveClass: "active",

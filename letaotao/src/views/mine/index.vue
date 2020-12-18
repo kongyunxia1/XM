@@ -24,19 +24,20 @@
         <van-grid-item icon="location-o" text="地址管理" />
         <van-grid-item icon="certificate" text="支付安全" />
         <van-grid-item icon="records" text="意见反馈" />
-    </van-grid>
-    
-  </div>
-  <div class="logout">
-    <van-button type="default" size="large" @click="logout">退出登录</van-button>
-  </div>
+      </van-grid>
+    </div>
+    <div class="logout">
+      <van-button type="default" size="large" @click="logout"
+        >退出登录</van-button
+      >
+    </div>
     <Footer></Footer>
   </div>
 </template>
 
 <script>
-import Footer from "../../components/footer/index"
-import { Toast } from 'vant';
+import Footer from "../../components/footer/index";
+import { Toast } from "vant";
 export default {
   data() {
     return {};
@@ -44,21 +45,18 @@ export default {
   computed: {},
   watch: {},
   methods: {
-    logout(){
+    logout() {
       Toast({
-        message: '退出登录成功',
-        position: 'bottom',
-        duration:700,
+        message: "退出登录成功",
+        position: "bottom",
+        duration: 700,
       });
-      this.$router.push('/login')
-    }
+      localStorage.removeItem("token");
+      this.$router.push("/loging");
+    },
   },
-  created() {
-
-  },
-  mounted() {
-
-  },
+  created() {},
+  mounted() {},
   beforeCreate() {},
   beforeMount() {},
   beforeUpdate() {},
@@ -76,11 +74,8 @@ export default {
 .top {
   width: 100%;
   height: 160px;
-<<<<<<< HEAD
-   /* background: url('../../../public/img/center-bg.d069279.png') no-repeat center/cover; */
-=======
-  background: url('https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3942751454,1089199356&fm=26&gp=0.jpg') no-repeat center/cover;
->>>>>>> kong
+  background: url("https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3942751454,1089199356&fm=26&gp=0.jpg")
+    no-repeat center/cover;
   overflow: hidden;
 }
 .zichan {

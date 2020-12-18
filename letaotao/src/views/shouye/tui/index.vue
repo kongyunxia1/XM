@@ -133,7 +133,7 @@ export default {
   watch: {},
   methods: {
     detail(id) {
-      console.log(id);
+      this.$router.push({ path: "/detail", query: { id } });
     },
   },
   async created() {
@@ -143,7 +143,7 @@ export default {
         page: parseInt(Math.random() * 10),
       },
     });
-    console.log(res);
+
     this.list = res.data.products.splice(0, 2);
     this.list1 = res.data.products.splice(0, 2);
   },

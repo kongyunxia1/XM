@@ -1,16 +1,16 @@
 <template>
-  <div class='uresgiest'>
+  <div class="uresgiest">
     <Header></Header>
     <router-view></router-view>
-    <span class="wz" >网易严选</span><br>
+    <span class="wz">网易严选</span><br />
     <div class="form">
       <van-form>
         <div class="tu">
           上传头像
-          <img src="../../../public/img/timg.jpg" alt="">
+          <!-- <img src="../../../public/img/timg.jpg" alt=""> -->
           <!-- <van-uploader :after-read="afterRead" v-model="file"/> -->
         </div>
-        
+
         <van-field
           v-model="username"
           name="邮箱"
@@ -27,7 +27,13 @@
           :rules="[{ required: true, message: '请填写密码' }]"
         />
         <div style="margin: 16px;">
-          <van-button square block type="danger" native-type="submit" @click="onSubmit">
+          <van-button
+            square
+            block
+            type="danger"
+            native-type="submit"
+            @click="onSubmit"
+          >
             注册
           </van-button>
         </div>
@@ -41,33 +47,34 @@
 </template>
 
 <script>
-import axios from "axios"
-import Header from "../login/components/header/index"
+import axios from "axios";
+import Header from "../login/components/header/index";
 export default {
   data() {
     return {
-      username: '',
-      password: '',
+      username: "",
+      password: "",
     };
   },
   computed: {},
   watch: {},
   methods: {
     onSubmit() {
-      axios.post("http://localhost:3009/api/v1/auth/reg", {
+      axios
+        .post("http://localhost:3009/api/v1/auth/reg", {
           userName: this.username,
           password: this.password,
         })
         .then((res) => {
-          console.log(res.data)
-           if (res.data.code == 'success') {
-             alert('注册成功')
-              this.$router.push({
-                path: "/loging", 
-              });
-            }else{
-              alert(res.data.message)
-            } 
+          console.log(res.data.token);
+          if (res.data.code == "success") {
+            alert("注册成功");
+            this.$router.push({
+              path: "/loging",
+            });
+          } else {
+            alert(res.data.message);
+          }
         });
     },
     // 图片上传之前处理
@@ -97,12 +104,8 @@ export default {
         })
       }, */
   },
-  created() {
-
-  },
-  mounted() {
-    
-  },
+  created() {},
+  mounted() {},
   beforeCreate() {},
   beforeMount() {},
   beforeUpdate() {},
@@ -113,30 +116,29 @@ export default {
   components: {
     Header,
   },
-}
+};
 </script>
 
 <style scoped>
-.wz{
-  font-size:30px;
-  margin-left:120px;
-}
-.form{
-  margin-top:80px;
-}
-.res{
+.wz {
+  font-size: 30px;
   margin-left: 120px;
-
 }
-.tu{
+.form {
+  margin-top: 80px;
+}
+.res {
+  margin-left: 120px;
+}
+.tu {
   margin-left: 15px;
   font-size: 14px;
   color: #666;
 }
-.tu img{
+.tu img {
   width: 100px;
   height: 100px;
-  border:1px solid red;
+  border: 1px solid red;
   border-radius: 50%;
   margin-left: 16px;
 }

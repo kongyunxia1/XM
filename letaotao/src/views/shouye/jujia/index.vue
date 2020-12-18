@@ -1,6 +1,6 @@
 <template>
   <div class="jujia">
-    <a href=""><van-image width="100%" fit="contain" :src="banner" /></a>
+    <a href=""><van-image width="100%" fit="contain" :src="banner"/></a>
     <van-row type="flex" justify="center" class="text1">
       <van-col>床品件套</van-col>
     </van-row>
@@ -79,7 +79,8 @@ export default {
   methods: {
     detail(id) {
       //获取点击商品的id
-      console.log("当前被点击的id=" + id);
+
+      this.$router.push({ path: "/detail", query: { id } });
     },
   },
   async created() {
@@ -89,13 +90,11 @@ export default {
         page: parseInt(Math.random() * 10),
       },
     });
-    console.log(res);
+
     this.list = res.data.products.splice(0, 2);
     this.list0 = res.data.products.splice(0, 2);
     this.list1 = res.data.products.splice(0, 2);
     this.list2 = res.data.products.splice(0, 2);
-    console.log(this.list1);
-    console.log(this.list2);
   },
   mounted() {},
   beforeCreate() {},
